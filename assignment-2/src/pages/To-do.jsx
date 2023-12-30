@@ -24,17 +24,17 @@ const TodoList = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-6 bg-white shadow-md rounded-md">
-      <h1 className="text-2xl font-bold mb-4">To-Do List</h1>
+    <div className="max-w-md mx-auto mt-8 p-6 bg-gradient-to-br from-blue-300 via-purple-300 to-pink-300 rounded-md">
+      <h1 className="text-3xl font-bold text-black mb-4">To-Do List</h1>
       <div className="flex mb-4">
         <input
           type="text"
-          className="flex-grow border p-2 mr-2"
+          className="flex-grow border p-2 mr-2 rounded-xl"
           placeholder="Add a new task"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
         />
-        <button className="bg-blue-500 text-white p-2" onClick={addTask}>
+        <button className="bg-purple-400 text-white font-bold p-5 rounded-xl text-xl" onClick={addTask}>
           Add
         </button>
       </div>
@@ -42,7 +42,7 @@ const TodoList = () => {
         {tasks.map((task, index) => (
           <li
             key={index}
-            className={`flex items-center justify-between bg-gray-100 p-2 mb-2 ${
+            className={`flex items-center justify-between bg-gray-100 p-4 mb-2 rounded-xl ${
               task.completed ? 'line-through text-gray-500' : ''
             }`}
           >
@@ -66,3 +66,4 @@ const TodoList = () => {
 };
 
 export default TodoList;
+
